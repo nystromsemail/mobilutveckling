@@ -7,7 +7,7 @@ const Header = ({setSongsList}) => {
     const nav = useNavigation();
 
     const handleAdd = () => {
-        nav.navigate("AddSongScreen", {setSongsList: setSongsList})
+        nav.navigate("AddSongScreen")
     }
 
     return (

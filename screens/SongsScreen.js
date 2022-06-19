@@ -9,12 +9,16 @@ const SongsScreen = () => {
 const [songsList, setSongsList] = useState([]);
 
     useEffect(() => {
-
+        updateSongsList();
         DeviceEventEmitter.addListener("updateSongsListEvent", () => {
-            findAll()
-                .then(res => setSongsList(res));
+            updateSongsList();
         })
     }, [])
+
+    const updateSongsList = () => {
+        findAll()
+            .then(res => setSongsList(res));
+    }
 
     return (
         <View style={styles.container}>
